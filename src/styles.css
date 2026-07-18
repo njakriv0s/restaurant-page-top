@@ -93,15 +93,40 @@ nav {
 }
 
 .glass-overlay.active {
-    backdrop-filter: blur(7px);
+    backdrop-filter: blur(3px);
 }
 
 .content-box {
     position: absolute;
+    height: 500px;
+    width: 800px;
+    background-color: rgba(var(--color-neutral), 1);
+    z-index: 2;
+    border-radius: 15px;
+}
+
+.content-text-box {
     display: flex;
     flex-direction: column;
-    height: 300px;
-    width: 300px;
-    background-color: red;
-    z-index: 2;
+    margin: 2em;
 }
+
+.content-text-box>* {
+    font-family: 'Lato', sans-serif;
+}
+
+.content-box-header {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.content-paragraph {
+    font-size: 0.9em;
+    margin-bottom: 0.7em;
+}
+
+#hours {
+    margin-bottom: 0;
+}
+
