@@ -103,12 +103,15 @@ nav {
     background-color: rgba(var(--color-neutral), 1);
     z-index: 2;
     border-radius: 15px;
+    overflow: scroll;
+    border: 3px solid rgba(var(--color-primary, 1));
 }
 
 .content-text-box {
     display: flex;
     flex-direction: column;
     margin: 2em;
+    
 }
 
 .content-text-box>* {
@@ -128,5 +131,26 @@ nav {
 
 #hours {
     margin-bottom: 0;
+}
+
+.cat-dishes {
+    margin-bottom: 1em;
+}
+
+.cat-dishes>* {
+    font-size: 0.9em;
+}
+
+
+.plate-description {
+    font-style: italic;
+}
+
+.plate-description::before {
+    content: " - ";
+}
+
+.plate-price::before {
+    content: " - ";
 }
 

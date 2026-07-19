@@ -1,3 +1,7 @@
+import { deleteLogo, showOverlay, content } from "./index.js"
+
+const menuButton = document.getElementById("menu-button");
+
 const menu = [];
 
 function Dish(name, description, price) {
@@ -53,16 +57,67 @@ let dessert3 = new Dish("Seasonal Fruit Tart", "whatever's freshest that week, s
 let dessertCategory = new Category ("Desserts", [dessert1, dessert2, dessert3]);
 
 
-
 // DRINKS
 let drink1 = new Dish("House Wine (glass/bottle)", "red or white, ask your server", "€4.50 / €18.00")
 let drink2 = new Dish("Local Craft Beer", "rotating selection on tap", "€5.00")
 let drink3 = new Dish("Fresh Lemonade", "mint, sparkling water", "€3.50")
 let drink4 = new Dish("Greek Coffee", "traditional, served with a small sweet", "€2.50")
 
-let drinkCategory = new Category ("Drinks", [drink1, drink3, drink3, drink4]);
+let drinkCategory = new Category ("Drinks", [drink1, drink2, drink3, drink4]);
 
 
 menu.push(starterCategory, mainsCategory, grillCategory, sidesCategory, dessertCategory, drinkCategory);
-console.log(menu);
+
+
+menuButton.addEventListener("click", (e) => {
+
+    deleteLogo()
+    showOverlay()
+
+    let contentBox = document.createElement("div");
+    contentBox.classList.add("content-box");
+    content.appendChild(contentBox);
+
+    let contentTextBox = document.createElement("div");
+    contentTextBox.classList.add("content-text-box");
+    contentBox.appendChild(contentTextBox);
+
+    menu.forEach((element) => {
+
+        const category = document.createElement("header");
+        category.classList.add("content-box-header");
+        category.textContent = element.name;
+        contentTextBox.appendChild(category);
+
+        const catDishes = document.createElement("ul");
+        catDishes.classList.add("cat-dishes");
+        contentTextBox.appendChild(catDishes);
+
+        element.dish.forEach((element) => {
+
+            const plate = document.createElement("li");
+
+
+            const plateName = document.createElement("span");
+            plateName.textContent = element.name;
+
+            const plateDescription = document.createElement("span");
+            plateDescription.classList.add("plate-description");
+            plateDescription.textContent = element.description;
+
+            const platePrice = document.createElement("span");
+            platePrice.classList.add("plate-price");
+            platePrice.textContent = element.price;
+
+            plate.appendChild(plateName);
+            plate.appendChild(plateDescription);
+            plate.appendChild(platePrice);
+
+            catDishes.appendChild(plate);
+
+        })
+
+    })
+
+})
 
