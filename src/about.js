@@ -1,9 +1,13 @@
 import { deleteLogo, showLogo, showOverlay, hideOverlay, content } from "./index.js"
+import foodImg from "./food.jpeg"
+import chefImg from "./chef.jpeg"
 import closeImg from "./close.png"
 
-const homeButton = document.getElementById("home-button");
+const aboutButton = document.getElementById("about-button");
 
-homeButton.addEventListener("click", (e) => {
+
+
+aboutButton.addEventListener("click", (e) => {
 
     const existingContentBox = document.querySelector(".content-box");
     if (existingContentBox) {
@@ -27,7 +31,7 @@ homeButton.addEventListener("click", (e) => {
         contentBox.remove();
         hideOverlay();
         showLogo();
-    });
+    })
 
     let contentTextBox = document.createElement("div");
     contentTextBox.classList.add("content-text-box");
@@ -35,34 +39,48 @@ homeButton.addEventListener("click", (e) => {
 
     let contentBoxHeader = document.createElement("header");
     contentBoxHeader.classList.add("content-box-header");
-    contentBoxHeader.textContent = "Welcome to Ember & Oak"
+    contentBoxHeader.textContent = "About Ember & Oak"
     contentTextBox.appendChild(contentBoxHeader);
 
     let contentBoxPara1 = document.createElement("p");
     contentBoxPara1.classList.add("content-paragraph");
-    contentBoxPara1.textContent = "Where warmth meets the table.";
+    contentBoxPara1.textContent = "Ember & Oak started with a simple idea: food tastes better when it's made without shortcuts, and shared without rush.";
     contentTextBox.appendChild(contentBoxPara1);
 
     let contentBoxPara2 = document.createElement("p");
     contentBoxPara2.classList.add("content-paragraph");
-    contentBoxPara2.textContent = "Tucked into the heart of Loutraki, Ember & Oak brings together simple, honest cooking and a space designed to feel like home. From slow-roasted classics to seasonal plates built around what's fresh, every dish is made to be shared — and every table is set with that in mind.";
+    contentBoxPara2.textContent = "We source what's fresh and let it lead the menu — vegetables from nearby growers, fish brought in daily, meat slow-cooked the way it should be. Nothing overworked, nothing hiding behind a sauce. Just good ingredients, treated with care.";
     contentTextBox.appendChild(contentBoxPara2);
+
+    let foodImage = document.createElement("img");
+    foodImage.classList.add("about-photo");
+    foodImage.src = foodImg;
+    contentTextBox.appendChild(foodImage);
 
     let contentBoxPara3 = document.createElement("p");
     contentBoxPara3.classList.add("content-paragraph");
-    contentBoxPara3.textContent = "Our dining room blends natural wood, soft lighting, and greenery for an atmosphere that's relaxed without losing its edge. Whether you're stopping in for a quiet lunch or settling in for a long dinner with friends, we want you to slow down and stay a while.";
+    contentBoxPara3.textContent = "Behind the kitchen is a chef who believes a good meal starts long before it reaches the table — in choosing the right grower, waiting for the right season, and never rushing a dish that needs time. That same patience shows up in every plate that leaves the kitchen, from a simple soup to the slow-roasted lamb.";
     contentTextBox.appendChild(contentBoxPara3);
+
+    let chefImage = document.createElement("img");
+    chefImage.classList.add("about-photo");
+    chefImage.src = chefImg;
+    contentTextBox.appendChild(chefImage);
 
     let contentBoxPara4 = document.createElement("p");
     contentBoxPara4.classList.add("content-paragraph");
-    contentBoxPara4.textContent = "Open daily · 12:00 to 23:00";
-    contentBoxPara4.id = 'hours';
+    contentBoxPara4.textContent = "The space is built the same way — warm wood, soft light, greenery, a few quiet corners for a long conversation. We wanted somewhere that feels less like a restaurant and more like the kind of kitchen you'd actually want to be invited into.";
     contentTextBox.appendChild(contentBoxPara4);
 
     let contentBoxPara5 = document.createElement("p");
     contentBoxPara5.classList.add("content-paragraph");
-    contentBoxPara5.textContent = "Venizelou 62-64, Loutraki, Corinth 20300";
+    contentBoxPara5.textContent = "Whether you're here for a quick lunch or a slow evening with people you love, we're glad you're at our table.";
     contentTextBox.appendChild(contentBoxPara5);
 
 });
+
+
+
+
+
 

@@ -80,6 +80,11 @@ nav {
 
 .logo:hover {
     transform: scale(1.03);
+    /* transition: 0.2s; */
+}
+
+.logo.hidden {
+    display: none;
 }
 
 .glass-overlay {
@@ -104,14 +109,17 @@ nav {
     z-index: 2;
     border-radius: 15px;
     overflow: scroll;
-    border: 3px solid rgba(var(--color-primary, 1));
+    overscroll-behavior: contain;
+    border: 3px solid rgba(var(--color-primary), 1);
 }
 
 .content-text-box {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
     margin: 2em;
-    
+    position: absolute;
 }
 
 .content-text-box>* {
@@ -152,5 +160,32 @@ nav {
 
 .plate-price::before {
     content: " - ";
+}
+
+/* ABOUT SECTION */
+
+.about-photo {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 100%;
+    align-self: center;
+    margin: 1em;
+}
+
+.close-button {
+    height: 20px;
+    width: 20px;
+    position: relative;
+    top: 10px;
+    left: 760px;
+}
+
+.close-button:hover {
+    cursor: pointer;
+}
+
+.close-button:active {
+    transform: translateY(1px);
 }
 

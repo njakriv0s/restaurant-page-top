@@ -1,4 +1,5 @@
-import { deleteLogo, showOverlay, content } from "./index.js"
+import { deleteLogo, showLogo, showOverlay, hideOverlay, content } from "./index.js"
+import closeImg from "./close.png"
 
 const menuButton = document.getElementById("menu-button");
 
@@ -68,15 +69,31 @@ let drinkCategory = new Category ("Drinks", [drink1, drink2, drink3, drink4]);
 
 menu.push(starterCategory, mainsCategory, grillCategory, sidesCategory, dessertCategory, drinkCategory);
 
-
 menuButton.addEventListener("click", (e) => {
 
-    deleteLogo()
-    showOverlay()
+    const existingContentBox = document.querySelector(".content-box");
+    if (existingContentBox) {
+        existingContentBox.remove();
+    }
+
+    deleteLogo();
+
+    showOverlay();
 
     let contentBox = document.createElement("div");
     contentBox.classList.add("content-box");
     content.appendChild(contentBox);
+
+    let closeButton = document.createElement("img");
+    closeButton.classList.add("close-button");
+    closeButton.src = closeImg;
+    contentBox.appendChild(closeButton);
+
+    closeButton.addEventListener("click", (e) => {
+        contentBox.remove();
+        hideOverlay();
+        showLogo();
+    });
 
     let contentTextBox = document.createElement("div");
     contentTextBox.classList.add("content-text-box");
@@ -119,5 +136,5 @@ menuButton.addEventListener("click", (e) => {
 
     })
 
-})
+});
 
