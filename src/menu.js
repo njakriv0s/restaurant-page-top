@@ -1,4 +1,4 @@
-import { deleteLogo, showLogo, showOverlay, hideOverlay, content } from "./index.js"
+import { deleteLogo, showLogo, showOverlay, hideOverlay, content, buildHouse } from "./index.js"
 import closeImg from "./close.png"
 
 const menuButton = document.getElementById("menu-button");
@@ -80,24 +80,7 @@ menuButton.addEventListener("click", (e) => {
 
     showOverlay();
 
-    let contentBox = document.createElement("div");
-    contentBox.classList.add("content-box");
-    content.appendChild(contentBox);
-
-    let closeButton = document.createElement("img");
-    closeButton.classList.add("close-button");
-    closeButton.src = closeImg;
-    contentBox.appendChild(closeButton);
-
-    closeButton.addEventListener("click", (e) => {
-        contentBox.remove();
-        hideOverlay();
-        showLogo();
-    });
-
-    let contentTextBox = document.createElement("div");
-    contentTextBox.classList.add("content-text-box");
-    contentBox.appendChild(contentTextBox);
+    const contentTextBox = buildHouse();
 
     menu.forEach((element) => {
 
