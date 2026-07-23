@@ -1,0 +1,39 @@
+<svg width="360" height="360" viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .brand-text { font-family: Georgia, 'Times New Roman', serif; }
+    </style>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="180" cy="180" r="172" fill="#F4EFE6" stroke="#C1622D" stroke-width="4"/>
+  <circle cx="180" cy="180" r="158" fill="none" stroke="#5B4A6F" stroke-width="1.5"/>
+
+  <!-- Flame (Ember) -->
+  <g transform="translate(180, 108)">
+    <path d="M0,-38 C14,-22 20,-6 12,10 C22,4 28,-8 26,-20 C38,-6 40,16 26,32 C14,44 -14,44 -26,32 C-40,16 -38,-6 -26,-20 C-28,-8 -22,4 -12,10 C-20,-6 -14,-22 0,-38 Z"
+          fill="#C1622D"/>
+    <path d="M0,-14 C6,-6 9,2 5,10 C10,6 12,0 11,-6 C16,2 15,14 6,20 C0,24 -8,22 -11,14 C-14,6 -10,-4 0,-14 Z"
+          fill="#E8A15C"/>
+  </g>
+
+  <!-- Oak leaf pair -->
+  <g transform="translate(180, 178)" fill="#7A8B5C">
+    <path d="M-6,0 C-30,-6 -46,4 -52,24 C-40,20 -30,22 -22,30 C-30,20 -30,8 -22,-2 C-16,-10 -8,-10 -6,0 Z"/>
+    <path d="M6,0 C30,-6 46,4 52,24 C40,20 30,22 22,30 C30,20 30,8 22,-2 C16,-10 8,-10 6,0 Z"/>
+    <line x1="0" y1="-2" x2="0" y2="34" stroke="#7A8B5C" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Restaurant name -->
+  <text x="180" y="248" text-anchor="middle" class="brand-text" font-size="34" fill="#3A3F44" letter-spacing="1">
+    Ember <tspan fill="#C1622D">&amp;</tspan> Oak
+  </text>
+
+  <!-- Divider -->
+  <line x1="130" y1="262" x2="230" y2="262" stroke="#5B4A6F" stroke-width="1.5"/>
+
+  <!-- Tagline -->
+  <text x="180" y="280" text-anchor="middle" class="brand-text" font-size="12" fill="#5B4A6F" letter-spacing="3">
+    RESTAURANT
+  </text>
+</svg>
